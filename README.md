@@ -1,7 +1,7 @@
 # UserNotifications Framework
 
 ## 概要
-UserNotificationsは、Local通知・Remote通知の配信や処理をするためのフレームワークです。<br>時間や場所などを条件にLocal通知の配信予約をすることができます。
+`UserNotifications`は、Local通知・Remote通知の配信や処理をするためのフレームワークです。<br>時間や場所などを条件にLocal通知の配信予約をすることができます。
 
 ## クラス
 [UNCalendarNotificationTrigger Class](https://github.com/stv-yokudera/ios-usernotifications-demo#uncalendarnotificationtrigger)<br>
@@ -19,6 +19,7 @@ UserNotificationsは、Local通知・Remote通知の配信や処理をするた�
 | Swift | 3.0.2 |
 | Xcode | 8.2.1 |
 | iOS | 10.0~ |
+
 ## 参考
 https://developer.apple.com/reference/usernotifications
 
@@ -27,7 +28,7 @@ https://developer.apple.com/reference/usernotifications
 # UNCalendarNotificationTrigger
 
 ## 概要
-UNCalendarNotificationTriggerは、指定した日時に通知を配信するクラスです。
+`UNCalendarNotificationTrigger`は、指定した日時に通知を配信するクラスです。
 
 ## 関連クラス
 UNNotificationTrigger
@@ -36,13 +37,13 @@ UNNotificationTrigger
 
 | イニシャライザ | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| init(dateMatching:repeats:) | 指定したdateComponentsからカレンダートリガーを作成する | UNCalendarNotificationTrigger.init(dateMatching: dateComponents, repeats: false) |
+| init(dateMatching:repeats:) | 指定したdateComponentsからカレンダートリガーを作成する | `UNCalendarNotificationTrigger.init(dateMatching: dateComponents, repeats: false)` |
 
 ## 主要プロパティ
 
 | プロパティ名 | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| dateComponents | dateComponents | trigger.dateComponents |
+| dateComponents | dateComponents | `trigger.dateComponents` |
 
 ## 参考
 https://developer.apple.com/reference/usernotifications/uncalendarnotificationtrigger
@@ -52,7 +53,7 @@ https://developer.apple.com/reference/usernotifications/uncalendarnotificationtr
 # UNMutableNotificationContent
 
 ## 概要
-UNMutableNotificationContentは、編集可能な通知コンテンツを提供するクラスです。
+`UNMutableNotificationContent`は、編集可能な通知コンテンツを提供するクラスです。
 
 ## 関連クラス
 UNNotificationContent
@@ -61,10 +62,10 @@ UNNotificationContent
 
 | プロパティ名 | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| title | 通知のタイトル | content.title = "title" |
-| subtitle | 通知のサブタイトル | content.subtitle = "subtitle" |
-| body | 通知のメッセージ | content.body = "body" |
-| sound | 通知音 | content.sound = customSound ?? .default() |
+| title | 通知のタイトル | `content.title = "title"` |
+| subtitle | 通知のサブタイトル | `content.subtitle = "subtitle"` |
+| body | 通知のメッセージ | `content.body = "body"` |
+| sound | 通知音 | `content.sound = customSound ?? .default()` |
 
 ## 参考
 https://developer.apple.com/reference/usernotifications/unmutablenotificationcontent
@@ -74,7 +75,7 @@ https://developer.apple.com/reference/usernotifications/unmutablenotificationcon
 # UNNotificationRequest
 
 ## 概要
-UNNotificationRequestは、通知コンテンツとその配信のトリガーを指定して通知を要求するクラスです。
+`UNNotificationRequest`は、通知コンテンツとその配信のトリガーを指定して通知を要求するクラスです。
 
 ## 関連クラス
 NSObject
@@ -83,7 +84,7 @@ NSObject
 
 | イニシャライザ | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| init(identifier:content:trigger:) | ローカル通知要求オブジェクトを作成する | UNNotificationRequest(identifier: "aNotification", content: content, trigger: trigger) |
+| init(identifier:content:trigger:) | ローカル通知要求オブジェクトを作成する | `UNNotificationRequest(identifier: "aNotification",`<br> `content: content, trigger: trigger)` |
 
 ## 参考
 https://developer.apple.com/reference/usernotifications/unnotificationrequest
@@ -93,7 +94,7 @@ https://developer.apple.com/reference/usernotifications/unnotificationrequest
 # UNNotificationSettings
 
 ## 概要
-UNNotificationSettingsは、アプリの通知の設定と承認ステータスを管理するクラスです。
+`UNNotificationSettings`は、アプリの通知の設定と承認ステータスを管理するクラスです。
 
 ## 関連クラス
 NSObject
