@@ -43,7 +43,7 @@ UNNotificationTrigger
 
 | プロパティ名 | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| dateComponents | dateComponents | `trigger.dateComponents` |
+| `dateComponents` | dateComponents | `trigger.dateComponents` |
 
 ## 参考
 https://developer.apple.com/reference/usernotifications/uncalendarnotificationtrigger
@@ -103,12 +103,12 @@ NSObject
 
 | プロパティ名 | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| authorizationStatus | 承認ステータスを取得する | settings.authorizationStatus |
-| notificationCenterSetting | 通知が通知センターに表示されるかどうかの設定 | settings.notificationCenterSetting |
-| lockScreenSetting | デバイスロック時に通知が画面に表示されるかどうかの設定 | settings.lockScreenSetting |
-| alertStyle | 通知の種類を取得する | settings.alertStyle |
-| badgeSetting | アプリのアイコンのバッジを作成するための承認ステータスを取得する | settings.badgeSetting |
-| soundSetting | 通知のサウンドを再生するための承認ステータスを取得する | settings.soundSetting |
+| `authorizationStatus` | 承認ステータスを取得する | `settings.authorizationStatus` |
+| `notificationCenterSetting` | 通知が通知センターに表示されるかどうかの設定 | `settings.notificationCenterSetting` |
+| `lockScreenSetting` | デバイスロック時に通知が画面に表示されるかどうかの設定 | `settings.lockScreenSetting` |
+| `alertStyle` | 通知の種類を取得する | `settings.alertStyle` |
+| `badgeSetting` | アプリのアイコンのバッジを作成するための承認ステータスを取得する | `settings.badgeSetting` |
+| `soundSetting` | 通知のサウンドを再生するための承認ステータスを取得する | `settings.soundSetting` |
 
 ## 参考
 https://developer.apple.com/reference/usernotifications/unnotificationsettings
@@ -118,7 +118,7 @@ https://developer.apple.com/reference/usernotifications/unnotificationsettings
 # UNNotificationSound
 
 ## 概要
-UNNotificationSoundは、通知が配信されたときに再生されるサウンドを設定するクラスです。
+`UNNotificationSound`は、通知が配信されたときに再生されるサウンドを設定するクラスです。
 
 ## 関連クラス
 NSObject
@@ -127,13 +127,13 @@ NSObject
 
 | イニシャライザ | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| init(named:) | 指定したサウンドファイルを再生する通知サウンドオブジェクトを作成する | UNNotificationSound.init(named: "Alarm.mp3") |
+| `init(named:)` | 指定したサウンドファイルを再生する通知サウンドオブジェクトを作成する | `UNNotificationSound.init(named: "Alarm.mp3")` |
 
 ## 主要メソッド
 
 | メソッド名 | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| default() | 通知のデフォルトサウンドを表すオブジェクトを返す| content.sound = .default() |
+| `default()` | 通知のデフォルトサウンドを表すオブジェクトを返す| `content.sound = .default()` |
 
 
 ## 参考
@@ -144,7 +144,7 @@ https://developer.apple.com/reference/usernotifications/unnotificationsound
 # UNTimeIntervalNotificationTrigger
 
 ## 概要
-UNTimeIntervalNotificationTriggerは、指定した時間が経過すると通知を配信するクラスです。
+`UNTimeIntervalNotificationTrigger`は、指定した時間が経過すると通知を配信するクラスです。
 
 ## 関連クラス
 UNNotificationTrigger
@@ -153,13 +153,13 @@ UNNotificationTrigger
 
 | イニシャライザ | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| init(timeInterval:repeats:) | 指定した時間値からタイムインターバルトリガーを作成する | UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true) |
+| `init(timeInterval:repeats:)` | 指定した時間値からタイムインターバルトリガーを作成する | `UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)` |
 
 ## 主要プロパティ
 
 | プロパティ名 | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| timeInterval | タイムインターバル | trigger.timeInterval |
+| `timeInterval` | 通知が行われるまでの時間間隔 | `trigger.timeInterval` |
 
 ## 参考
 https://developer.apple.com/reference/usernotifications/untimeintervalnotificationtrigger
@@ -187,7 +187,7 @@ NSObject
 |current() | シングルトンユーザー通知センターオブジェクトを取得する | UNUserNotificationCenter.current() |
 |requestAuthorization(options:completionHandler:) | 通知使用の許可を要求する | center.requestAuthorization<br>(options: [.alert],completionHandler: { (granted, error) in |
 |getNotificationSettings(completionHandler:) | 通知設定を取得する| center.getNotificationSettings<br>(completionHandler: { (settings) in |
-|add(_:withCompletionHandler:)|ローカル通知を配信するためのスケジュールを追加する|center.add<br>(request, withCompletionHandler: nil)|
+|`add(_:withCompletionHandler:)`|ローカル通知を配信するためのスケジュールを追加する|`center.add`<br>`(request, withCompletionHandler: nil)`|
 |removeAllPendingNotificationRequests() | 未配信の通知要求を削除する | center.removeAllPendingNotificationRequests() |
 
 ### UNUserNotificationCenterDelegateプロトコルのメソッド
