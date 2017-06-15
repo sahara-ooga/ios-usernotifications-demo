@@ -84,7 +84,7 @@ NSObject
 
 | イニシャライザ | 説明 | サンプル |
 |:-----------|:------------|:------------|
-| init(identifier:content:trigger:) | ローカル通知要求オブジェクトを作成する | `UNNotificationRequest(identifier: "aNotification",`<br> `content: content, trigger: trigger)` |
+| `init(identifier:content:trigger:)` | ローカル通知要求オブジェクトを作成する | `UNNotificationRequest(identifier: "aNotification",`<br> `content: content, trigger: trigger)` |
 
 ## 参考
 https://developer.apple.com/reference/usernotifications/unnotificationrequest
@@ -169,7 +169,7 @@ https://developer.apple.com/reference/usernotifications/untimeintervalnotificati
 # UNUserNotificationCenter
 
 ## 概要
-UNUserNotificationCenterは、アプリの通知機能を管理するクラスです。
+`UNUserNotificationCenter`は、アプリの通知機能を管理するクラスです。
 
 ## 関連クラス
 NSObject
@@ -178,24 +178,24 @@ NSObject
 
 |プロパティ名|説明|サンプル|
 |---|---|---|
-|delegate | delegateを指定する <br>UNUserNotificationCenterDelegateを利用するため | center.delegate = self |
+| `delegate` | delegateを指定する <br>`UNUserNotificationCenterDelegate`を利用するため | `center.delegate = self` |
 
 ## 主要メソッド
 
 |メソッド名|説明|サンプル|
 |---|---|---|
-|current() | シングルトンユーザー通知センターオブジェクトを取得する | UNUserNotificationCenter.current() |
-|requestAuthorization(options:completionHandler:) | 通知使用の許可を要求する | center.requestAuthorization<br>(options: [.alert],completionHandler: { (granted, error) in |
-|getNotificationSettings(completionHandler:) | 通知設定を取得する| center.getNotificationSettings<br>(completionHandler: { (settings) in |
+|`current()` | シングルトンユーザー通知センターオブジェクトを取得する | `UNUserNotificationCenter.current()` |
+|`requestAuthorization(options:completionHandler:)` | 通知使用の許可を要求する | `center.requestAuthorization`<br>`(options: [.alert],completionHandler: { (granted, error) in }` |
+|`getNotificationSettings(completionHandler:)` | 通知設定を取得する| `center.getNotificationSettings`<br>`(completionHandler: { (settings) in }` |
 |`add(_:withCompletionHandler:)`|ローカル通知を配信するためのスケジュールを追加する|`center.add`<br>`(request, withCompletionHandler: nil)`|
-|removeAllPendingNotificationRequests() | 未配信の通知要求を削除する | center.removeAllPendingNotificationRequests() |
+|`removeAllPendingNotificationRequests()` | 未配信の通知要求を削除する | `center.removeAllPendingNotificationRequests()` |
 
 ### UNUserNotificationCenterDelegateプロトコルのメソッド
 
 |メソッド名|説明|必須|
 |---|---|---|
-|userNotificationCenter(_:willPresent:withCompletionHandler:) | フォアグラウンドのアプリに通知が送信されたときに呼び出される | - |
-|userNotificationCenter(_:didReceive:withCompletionHandler:) | 通知がタップされて開かれたときに呼び出される | - |
+|`userNotificationCenter(_:willPresent:withCompletionHandler:)` | フォアグラウンドのアプリに通知が送信されたときに呼び出される | - |
+|`userNotificationCenter(_:didReceive:withCompletionHandler:)` | 通知がタップされて開かれたときに呼び出される | - |
 
 ## 参考
 https://developer.apple.com/reference/usernotifications/unusernotificationcenter
