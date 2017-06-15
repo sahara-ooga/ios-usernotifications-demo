@@ -211,7 +211,12 @@ class ViewController: UIViewController {
     /// 指定日時にローカル通知を送るボタン
     @IBAction func tappedCalendarNotification(_ sender: Any) {
         // 通知する日時を設定する
-        let dateComponents = DateComponents.init(year: 2017, month: 3, day: 6, hour: 1, minute: 49)
+        let dateComponents = DateComponents.init(year: 2017,
+                                                 month: 3,
+                                                 day: 6,
+                                                 hour: 1,
+                                                 minute: 49)
+        
         requestCalendarNotification(dateComponents: dateComponents)
     }
     
