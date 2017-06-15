@@ -28,9 +28,10 @@ class ViewController: UIViewController {
     private func getNotificationSettings() {
         userNotificationCenter?.getNotificationSettings(completionHandler: { (settings) in
             
+            //通知の承認状態
             switch settings.authorizationStatus {
             case .authorized:
-                // 選択されていない
+                // 許可
                 print("authorizationStatus: authorized")
                 break
             case .denied:
@@ -38,11 +39,12 @@ class ViewController: UIViewController {
                 print("authorizationStatus: denied")
                 break
             case .notDetermined:
-                // 許可
+                // 選択されていない
                 print("authorizationStatus: notDetermined")
                 break
             }
             
+            //通知センターへの表示設定
             switch settings.notificationCenterSetting {
             case .notSupported:
                 // サポートしていない
@@ -58,21 +60,7 @@ class ViewController: UIViewController {
                 break
             }
             
-            switch settings.badgeSetting {
-            case .notSupported:
-                // サポートしていない
-                print("badgeSetting: notSupported")
-                break
-            case .disabled:
-                // Appアイコンにバッジを表示がOFF
-                print("badgeSetting: disabled")
-                break
-            case .enabled:
-                // Appアイコンにバッジを表示がON
-                print("badgeSetting: enabled")
-                break
-            }
-            
+            //ロック画面の表示設定
             switch settings.lockScreenSetting {
             case .notSupported:
                 // サポートしていない
@@ -88,6 +76,23 @@ class ViewController: UIViewController {
                 break
             }
             
+            //バッジの表示設定
+            switch settings.badgeSetting {
+            case .notSupported:
+                // サポートしていない
+                print("badgeSetting: notSupported")
+                break
+            case .disabled:
+                // Appアイコンにバッジを表示がOFF
+                print("badgeSetting: disabled")
+                break
+            case .enabled:
+                // Appアイコンにバッジを表示がON
+                print("badgeSetting: enabled")
+                break
+            }
+            
+            //アラートの表示設定
             switch settings.alertStyle {
             case .none:
                 // なし
@@ -131,7 +136,9 @@ class ViewController: UIViewController {
         
         // 3秒後に通知する
         // repeatsをtrueにする場合は、timeIntervalを60秒以上に設定しなければならない
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3,
+                                                        repeats: false)
+        
         let request = UNNotificationRequest(identifier: "aNotification",
                                             content: content,
                                             trigger: trigger)
